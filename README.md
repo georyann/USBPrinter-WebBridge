@@ -2,7 +2,13 @@
 
 USBPrinter WebBridge 是一个轻量级的web程序，旨在无缝地将您的USB打印机转换为网络打印机，允许任何连接到网络的设备进行远程打印。
 
-前端使用纯HTML，后端基于Python和Flask框架，使用CUPS进行打印机的管理。支持自动保存用户上传的文件并记录用户上传的文件名、ip地址及操作系统。
+本Web应用前端使用纯HTML，后端基于Python和Flask框架，使用CUPS进行打印机的管理。支持自动保存用户上传的文件并记录用户上传的文件名、ip地址及操作系统。
+
+1. 允许的文件格式：允许的文件格式为 pdf, txt, doc, docx, jpg, jpeg, png。可通过修改后端php增加文件格式列表拓展。
+2. 获取公网IP：使用第三方API ipify 来获取客户端的公网IP地址。
+3. 记录日志：记录上传文件的文件名、上传时间、公网IP地址和客户端操作系统信息。
+
+
 
 ### 前提条件
 
@@ -112,19 +118,21 @@ sudo yum install hplip
 
 3. 在Web界面中，添加打印机并共享添加的打印机。
 
-   <img src="/Users/guoyihao/Library/Application Support/typora-user-images/image-20240901144921828.png" alt="image-20240901144921828" style="zoom: 25%;" />
+   <img src="https://pico-1253511019.cos.ap-nanjing.myqcloud.com/202409011950292.png" alt="image-20240901144921828" style="zoom: 25%;" />
+
+   
 
    有多个打印机选项时请选择带有USB字样的打印机
 
-   <img src="/Users/guoyihao/Library/Application Support/typora-user-images/image-20240901145047089.png" alt="image-20240901145047089" style="zoom:33%;" />
+   <img src="https://pico-1253511019.cos.ap-nanjing.myqcloud.com/202409011950742.png" alt="image-20240901145047089" style="zoom:33%;" />
 
    勾选共享打印机
 
-   <img src="/Users/guoyihao/Library/Application Support/typora-user-images/image-20240901145225053.png" alt="image-20240901145225053" style="zoom:25%;" />
+   <img src="https://pico-1253511019.cos.ap-nanjing.myqcloud.com/202409011950300.png" alt="image-20240901145225053" style="zoom:25%;" />
 
    选择与打印机型号匹配的驱动程序
 
-   <img src="/Users/guoyihao/Library/Application Support/typora-user-images/image-20240901145526259.png" alt="image-20240901145526259" style="zoom:33%;" />
+   <img src="https://pico-1253511019.cos.ap-nanjing.myqcloud.com/202409011950383.png" alt="image-20240901145526259" style="zoom:33%;" />
 
    打印测试页面以测试打印机是否正常工作
 
