@@ -238,9 +238,11 @@ sudo firewall-cmd --reload
 
 ### 实验性
 
-对于cloudflare tunnels在中国大陆地区访问不畅，我曾酌情选择cpolar实现内网穿透。由于免费版cpolar提供的三级域名会不定期更新，为了固定访问域名，可使用[dynu](https://www.dynu.com)提供的免费301web转发服务间接实现。
+对于cloudflare tunnels在中国大陆地区访问不畅，可酌情选择cpolar实现内网穿透。免费版cpolar提供的三级域名会不定期更新，为了固定访问域名，可使用[dynu](https://www.dynu.com)提供的免费301web转发服务间接实现。
 
-一键启动cpolar并通过正则表达式获取三级域名请参阅脚本`./Projects/get_cpolar_address.py`。
+一键启动cpolar并通过正则表达式获取cpolar网址请参阅脚本`./Projects/get_cpolar_address.py`。
+
+可自行使用**dynu**提供的免费api接口在获取到cpolar网址后自动设置web转发。
 
 #### 参考文档
 
