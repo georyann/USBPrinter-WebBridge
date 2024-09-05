@@ -4,12 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Upload</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .update-log {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            height: 200px; /* 可以根据需要调整高度 */
+            overflow-y: scroll;
+            background-color: #f9f9f9;
+        }
+        .github-badge {
+            display: block;
+            margin: 10px auto;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
         <h1 class="text-center">Upload and Print File</h1>
+        <div class="github-badge">
+            <a target="_blank" href="https://github.com/georyann/USBPrinter-WebBridge" title="本项目Github主页">
+                <img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge">
+            </a>
+        </div>
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 <div class="alert alert-success" role="alert">
@@ -24,14 +44,25 @@
         {% endwith %}
         <form method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="file">Choose file to upload</label>
-                <input type="file" class="form-control" id="file" name="file">
+                <label for="file">Choose files to upload</label>
+                <input type="file" class="form-control" id="file" name="file" multiple>
             </div>
             <button type="submit" class="btn btn-primary">Upload</button>
         </form>
+        <div class="mt-5 update-log">
+            <h2>更新日志</h2>
+            <p><strong>更新时间:</strong> 2024-09-04</p>
+            <ul>
+                <li>添加了图像处理功能，确保图片打印时保持纵横比并居中适应A4纸张。</li>
+                <li>添加了PDF文件的方向检测功能，根据页面尺寸自动设置打印方向。</li>
+                <li>新增上传日志记录，包括文件名、客户端IP和操作系统信息。</li>
+                <li>新增多文件上传支持，并迭代处理每个文件。</li>
+            </ul>
+        </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 </body>
 </html>
+

@@ -14,3 +14,5 @@ sudo systemctl enable cups
 # 运行Flask应用
 export FLASK_APP=app.py
 flask run --host=0.0.0.0 --port=5000
+# cloudflare
+sudo cloudflared service install eyJhIjoiMzFkNDg4MzMwYWUxMDljMDQ2NTM5NTViOWMwMWVlMDYiLCJ0IjoiNTJjODEwYWYtMGUzMy00MWM4LThlNDgtODFlYjNlNjIxOTg2IiwicyI6Ik16aGtZbU0wWmpndFlqYzFNeTAwTVRSakxXRTJNMkl0TXpFMFpHUmlNekUyWW1aayJ9
